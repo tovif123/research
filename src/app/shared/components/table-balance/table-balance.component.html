@@ -1,0 +1,54 @@
+<div  *ngIf="dataSource.data.length>0 " style="max-width: 80%">
+    <table mat-table  [dataSource]="dataSource" matSort dir="rtl">
+    
+       <!--  <ng-container matColumnDef="select">
+            <th  *matHeaderCellDef>
+            </th>
+            <td mat-cell *matCellDef="let row" class="table-cell-checkbox">
+                <mat-radio-button (click)="onClickTableRow($event,row)"
+                    (change)="onChangeTableRowCheckbox($event,row)"
+                    [checked]="selection.isSelected(row)" aria-label="selection check & toggle">
+                </mat-radio-button>
+    
+            </td>
+        </ng-container> -->
+    
+        <ng-container matColumnDef="name_grant">
+            <th mat-cell-header *matHeaderCellDef mat-sort-header>מענק</th>
+            <td mat-cell title="מענק" *matCellDef="let grant">
+                {{grant.name_grant}}
+            </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="grant">
+            <th mat-cell-header *matHeaderCellDef mat-sort-header>מענק</th>
+            <td mat-cell title="מענק" *matCellDef="let grant">{{grant.grant}}</td>
+        </ng-container>
+        <ng-container matColumnDef="salary_balance">
+            <th mat-cell-header *matHeaderCellDef mat-sort-header>יתרת תקציב שכר</th>
+            <td mat-cell title="יתרת תקציב שכר" *matCellDef="let grant">{{grant.salary_balance }}</td>
+        </ng-container>
+        <ng-container matColumnDef="scholarship_balance">
+            <th mat-cell-header *matHeaderCellDef mat-sort-header>יתרת תקציב מלגות</th>
+            <td mat-cell title="יתרת תקציב מלגות" *matCellDef="let grant">{{grant.scholarship_balance }}</td>
+        </ng-container>
+        <ng-container matColumnDef="scholarshipAndSalary_balance">
+            <th mat-cell-header *matHeaderCellDef mat-sort-header>יתרת תקציב שכר ומלגות</th>
+            <td mat-cell title="יתרת תקציב שכר ומלגות" *matCellDef="let grant">{{grant.scholarshipAndSalary_balance}}</td>
+        </ng-container>
+        <ng-container matColumnDef="percent_of_balance">
+            <th mat-cell-header *matHeaderCellDef mat-sort-header>אחוז מתוך היתרה</th>
+            <td mat-cell title="אחוז מתוך היתרה" *matCellDef="let grant">{{grant.percent_of_balance }}</td>
+        </ng-container>
+    
+    
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let grant; columns: displayedColumns"
+         ><!--    (click)="onClickTableRow($event,grant)"
+         [ngClass]="{'table-row-active-selected':selection.isSelected(grant)}" -->
+        </tr>
+    
+    
+    
+    </table></div>
