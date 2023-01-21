@@ -1,3 +1,5 @@
+<div class="container">
+	<h2>פרטי העסקות</h2>
 <table mat-table [dataSource]="data" multiTemplateDataRows matSort>
 	<ng-container [matColumnDef]="column.key" *ngFor="let column of columnsToDisplay">
 		<th mat-header-cell *matHeaderCellDef> {{column.value}} </th>
@@ -8,7 +10,7 @@
 		<td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
 			<div class="example-element-detail" [@detailExpand]="element?.expanded"  *ngIf="element?.expanded">
 				<div style="width: 100%;">
-
+<h3>רשימת עובדים למרכז עלות  1111222424</h3>
 					<table mat-table [dataSource]="element.emploeey" multiTemplateDataRows matSort>
 						<ng-container matColumnDef="{{innerColumn.key}}" *ngFor="let innerColumn of innerDisplayedColumns">
 							<th mat-header-cell *matHeaderCellDef mat-sort-header> {{innerColumn.value}} </th>
@@ -17,11 +19,10 @@
 						</ng-container>
 						<td mat-cell *matCellDef="let address"> <mat-icon>control_point</mat-icon> </td>
 						<ng-container matColumnDef="expandedExpandedDetail">
-							<h5>ddddddddddd</h5>
 							<td mat-cell *matCellDef="let address" [attr.colspan]="innerInnerDisplayedColumns.length">
 								<div class="example-element-detail" [@detailExpand]="address?.expanded" *ngIf="address?.expanded">
 									<div style="width: 100%;">
-<h3>פרטי עובד</h3>
+<h3>פירוט מינויים לעובד</h3>
 										<table style="width: 100%;" #inneTables mat-table #innrSort="matSort"
 											[dataSource]="address?.deatils_empoeey" matSort>
 											<ng-container matColumnDef="{{col.key}}" *ngFor="let col of innerInnerDisplayedColumns">
@@ -60,7 +61,7 @@
 	<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
 </table>
 
-
+</div>
 <!-- Copyright 2019 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license -->
